@@ -1,62 +1,91 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  background: linear-gradient(to right, #2c3e50, #4ca1af);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-}
-
-.calculator {
-  background-color: #1e1e1e;
+  background: #f0f2f5;
+  margin: 0;
   padding: 20px;
-  border-radius: 15px;
-  width: 300px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
-#display {
-  width: 100%;
-  height: 60px;
-  font-size: 26px;
-  padding: 10px;
-  margin-bottom: 15px;
-  text-align: right;
-  border: none;
+.form-container {
+  max-width: 500px;
+  background: white;
+  margin: auto;
+  padding: 25px;
   border-radius: 10px;
-  background: #333;
-  color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+.form-container h1 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 button {
-  padding: 20px;
-  font-size: 18px;
-  background-color: #555;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  background-color: #004080;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
-  box-shadow: -8px -8px 12px rgb(110, 106, 106);
-  cursor: pointer ;
 }
 
-button:hover {
-  background-color: rgb(112, 86, 86);
+.id-card {
+  display: none;
+  width: 350px;
+  height: auto;
+  background: white;
+  border: 2px solid #004080;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+  padding: 20px;
+  text-align: center;
+  position: relative;
 }
 
-.zero {
-  grid-column: span 2;
+.id-card .college-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.id-card h2 {
+  margin-top: 80px;
+  color: #004080;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.id-card img.photo {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+  border: 2px solid #004080;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+.id-card p {
+  margin: 5px 0;
+  font-size: 14px;
 }

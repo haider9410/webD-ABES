@@ -1,46 +1,37 @@
-const display = document.getElementById('display');
+function generateID() {
+  const name = document.getElementById("name").value;
+  const roll = document.getElementById("roll").value;
+  const dob = document.getElementById("dob").value;
+  const mobile = document.getElementById("mobile").value;
+  const address = document.getElementById("address").value;
+  const photoInput = document.getElementById("photo");
 
-function appendNumber(number) {
-  display.value += number;
-}
-
-function appendOperator(operator) {
-  const lastChar = display.value.slice(-1);
-  if ("+-*/%".includes(lastChar)) {
-    display.value = display.value.slice(0, -1) + operator;
-  } else {
-    display.value += operator;
+  if (!name || !roll || !dob || !mobile || !address || photoInput.files.length === 0) {
+    alert("Please fill in all fields and upload a student photo.");
+    return;
   }
+
+  const file = photoInput.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function (e) {
+    const photoURL = e.target.result;
+
+    const idCardHTML = `
+      <img src="abes logo.jpg" class="college-logo" alt="College Logo" />
+      <h2>ABES Engeneering college ghziabad</h2>
+      <img src="${photoURL}" class="photo" alt="Student Photo" />
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Roll No:</strong> ${roll}</p>
+      <p><strong>DOB:</strong> ${dob}</p>
+      <p><strong>Mobile:</strong> ${mobile}</p>
+      <p><strong>Address:</strong> ${address}</p>
+    `;
+
+    const idCard = document.getElementById("idCard");
+    idCard.innerHTML = idCardHTML;
+    idCard.style.display = "block";
+  };
+
+  reader.readAsDataURL(file);
 }
-
-function clearDisplay() {
-  display.value = '';
-}
-
-function deleteLast() {
-  display.value = display.value.slice(0, -1);
-}
-
-function calculate() {
-  try {
-    display.value = eval(display.value);
-  } catch {
-    display.value = 'Error';
-  }
-}
-
-document.addEventListener('keydown', (e) => {
-  const key = e.key;
-
-  if (!isNaN(key) || key === '.') {
-    appendNumber(key);
-  } else if (['+', '-', '*', '/', '%'].includes(key)) {
-    appendOperator(key);
-  } else if (key === 'Enter') {
-    calculate();
-  } else if (key === 'Backspace') {
-    deleteLast();
-  } else if (key === 'Escape') {
-    clearDisplay();
-  }
-});

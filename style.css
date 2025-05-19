@@ -1,91 +1,106 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f0f2f5;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-.form-container {
-  max-width: 500px;
-  background: white;
-  margin: auto;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.form-container h1 {
+header {
   text-align: center;
-  color: #004080;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+} 
+header img{
+    margin: 10%;
+    height: 10%;
+    font-weight: 50;
 }
-
-label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px;
-  width: 100%;
-  background-color: #004080;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.id-card {
-  display: none;
-  width: 350px;
-  height: auto;
-  background: white;
-  border: 2px solid #004080;
-  margin: 30px auto;
-  border-radius: 15px;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
-  padding: 20px;
-  text-align: center;
-  position: relative;
-}
-
-.id-card .college-logo {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-}
-
-.id-card h2 {
-  margin-top: 80px;
-  color: #004080;
-  font-size: 20px;
+header h1 {
+  font-size: 36px;
   margin-bottom: 10px;
 }
 
-.id-card img.photo {
-  width: 100px;
-  height: 120px;
-  object-fit: cover;
-  border: 2px solid #004080;
-  border-radius: 10px;
-  margin: 10px auto;
+header p {
+  font-size: 18px;
+  color: #555;
 }
 
-.id-card p {
-  margin: 5px 0;
-  font-size: 14px;
+header a {
+  color: #007acc;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+section {
+  margin-bottom: 25px;
+}
+
+h2 {
+  color: #007acc;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+ul {
+  padding-left: 20px;
+  list-style: none;
+}
+
+ul li {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005b99;
+}
+
+.dark-mode {
+  background-color: #222;
+  color: #eee;
+}
+
+.dark-mode h2 {
+  color: #4dabf7;
+}
+
+.dark-mode button {
+  background-color: #4dabf7;
+}
+
+.dark-mode button:hover {
+  background-color: #339af0;
 }

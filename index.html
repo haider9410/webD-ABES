@@ -2,36 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>College ID Card Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haidar Shami - Web Developer Resume</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="form-container">
-    <h1>College ID Card Generator</h1>
-    
-    <label>Upload Student Photo:</label>
-    <input type="file" id="photo" accept="image/*" />
+  <div class="container">
+    <header>
+      
+  <img src="IMG_haidar.DNG" alt="Haidar Shami" class="profile-image" />
+      <h1>Haidar Shami</h1>
+      <p>Frontend Developer | haidarshami354@gmail.com | +9410893825</p>
+      <p><a href="#" target="_blank">LinkedIn</a> | <a href="#" target="_blank">GitHub</a> | <a href="#" target="_blank">Portfolio</a></p>
+    </header>
 
-    <label>Name:</label>
-    <input type="text" id="name" placeholder="Enter your name" />
+    <section>
+      <h2>Professional Summary</h2>
+      <p>Motivated and detail-oriented Web Developer with a strong foundation in front-end and back-end technologies. Experienced in building responsive web applications using modern JavaScript frameworks like React and Vue.js, and backend tools like Node.js and MongoDB. Passionate about clean code, user experience, and continuous learning.</p>
+    </section>
 
-    <label>Roll Number:</label>
-    <input type="text" id="roll" placeholder="Enter your roll number" />
+    <section>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li>HTML5, CSS3, JavaScript (ES6+)</li>
+        <li>React.js, Vue.js, Node.js</li>
+        <li>REST APIs, MongoDB, MySQL</li>
+        <li>Git, GitHub, VS Code</li>
+        <li>Responsive Web Design, Bootstrap, Tailwind CSS</li>
+      </ul>
+    </section>
 
-    <label>Date of Birth:</label>
-    <input type="date" id="dob" />
+    <section>
+      <h2>Work Experience</h2>
+      <h3>Frontend Developer - XYZ Company</h3>
+      <p><strong>Jan 2022 – Present</strong></p>
+      <ul>
+        <li>Developed dynamic and responsive front-end interfaces using React and Vue.js.</li>
+        <li>Integrated RESTful APIs and handled asynchronous data operations efficiently.</li>
+        <li>Collaborated with UI/UX designers to ensure pixel-perfect implementation and mobile responsiveness.</li>
+        <li>Improved page load speed by 30% through performance optimization techniques.</li>
+        <li>Contributed to internal component library using reusable React components.</li>
+      </ul>
+    </section>
 
-    <label>Mobile Number:</label>
-    <input type="text" id="mobile" placeholder="Enter your mobile number" />
+    <section>
+      <h2>Projects</h2>
+      <h3>Portfolio Website</h3>
+      <p><strong>Tech Stack:</strong> React, Tailwind CSS, Netlify</p>
+      <p>A personal portfolio website showcasing projects and skills with a clean, mobile-responsive design. Integrated GitHub API to display latest repositories and contributions dynamically.</p>
 
-    <label>Address:</label>
-    <input type="text" id="address" placeholder="Enter your address" />
+      <h3>Task Manager App</h3>
+      <p><strong>Tech Stack:</strong> MERN (MongoDB, Express, React, Node.js)</p>
+      <p>Built a full-stack task management application with user authentication, CRUD features, and responsive UI. Used JWT for secure login and MongoDB for storing user data and tasks.</p>
+    </section>
 
-    <button onclick="generateID()">Generate ID Card</button>
+    <section>
+      <h2>Education</h2>
+      <p><strong>Bachelor of Computer Science</strong> – ABC University, India <br/> <strong>2018 – 2022</strong></p>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>Responsive Web Design – freeCodeCamp – 2021</li>
+        <li>JavaScript Algorithms and Data Structures – freeCodeCamp – 2022</li>
+        <li>Full Stack Development Bootcamp – Udemy – 2023</li>
+      </ul>
+    </section>
+
+    <footer>
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </footer>
   </div>
-
-  <div id="idCard" class="id-card"></div>
 
   <script src="script.js"></script>
 </body>

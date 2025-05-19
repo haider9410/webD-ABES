@@ -1,51 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Image Hover Color</title>
-  <style>
-    body {
-      background-color: #eee;
-      text-align: center;
-      padding-top:150px
-    }
-    .image-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-  
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    .img1 {
-      width:50%;
-      height:500px;
-      filter: grayscale(100%); 
-      transition: filter 0.5s ease;
-      border-radius: 12px;
-      margin-right: 10px;
-    }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
 
-    .img1:hover {
-      filter: grayscale(0%); 
-    }
-    .img2 {
-      width:50%;
-      height:500px;
-      transition: 0.5s ease;
-      border-radius: 12px;
-    }
+        h1 {
+            color: #333;
+        }
 
-    .img2:hover {
-      filter: grayscale(100%);
-    }
-  </style>
+        label {
+            margin-top: 10px;
+            display: block;
+            font-size: 16px;
+            color: #555;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .table-container {
+            margin-top: 20px;
+            text-align: left;
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
-<H1>Image Hover Color</H1>
-  <div class="image-container">
-    <img class="img1" src="https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg" alt="Hover Image">
-    <img class="img2" src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?semt=ais_hybrid&w=740" alt="Hover Image">
-  </div>
+
+    <div class="container">
+        <h1>Multiplication Table Generator</h1>
+        <label for="num">Enter a number:</label>
+        <input type="number" id="num" placeholder="Enter number" required>
+
+        <button onclick="generateTable()">Generate Table</button>
+
+        <div class="table-container" id="tableContainer">
+            <h2>Multiplication Table of <span id="tableNum"></span></h2>
+            <table id="table">
+            
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function generateTable() {
+
+            var num = parseInt(document.getElementById('num').value);
+
+            if (isNaN(num)) {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            document.getElementById('tableContainer').style.display = 'block';
+
+            document.getElementById('tableNum').innerText = num;
+
+        
+            var table = document.getElementById('table');
+            table.innerHTML = ''; 
+
+            for (var i = 1; i <= 10; i++) {
+                var row = table.insertRow();
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+
+                cell1.innerText = num;
+                cell2.innerText = 'x ' + i;
+                cell3.innerText = '= ' + (num * i);
+            }
+        }
+    </script>
+
 </body>
 </html>

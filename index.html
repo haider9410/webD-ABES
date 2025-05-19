@@ -2,226 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Marksheet Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Hover Color</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background-color: #ffffff;
-      padding: 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 10px;
-    }
-
-    h2 {
+      background-color: #eee;
       text-align: center;
-      color: #333;
-      margin-bottom: 20px;
-      text-transform: uppercase;
+      padding-top:150px
+    }
+    .image-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
     }
 
-    label {
-      display: block;
-      margin: 10px 0 5px;
-      font-weight: 600;
+    .img1 {
+      width:50%;
+      height:500px;
+      filter: grayscale(100%); 
+      transition: filter 0.5s ease;
+      border-radius: 12px;
+      margin-right: 10px;
     }
 
-    input[type="text"], input[type="number"] {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+    .img1:hover {
+      filter: grayscale(0%); 
+    }
+    .img2 {
+      width:50%;
+      height:500px;
+      transition: 0.5s ease;
+      border-radius: 12px;
     }
 
-    input[type="file"] {
-      margin-bottom: 15px;
-    }
-
-    button {
-      background-color: #007bff;
-      color: white;
-      padding: 12px;
-      border: none;
-      width: 100%;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    .marksheet {
-      margin-top: 30px;
-      padding: 20px;
-      background-color: #f1f1f1;
-      border-radius: 10px;
-      display: none;
-    }
-
-    .marksheet h3 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .info, .marks {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-bottom: 15px;
-    }
-
-    .info div, .marks div {
-      flex: 1 1 45%;
-      margin-bottom: 10px;
-    }
-
-    .student-photo {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .student-photo img {
-      max-width: 150px;
-      height: auto;
-      border-radius: 8px;
-      border: 2px solid #ccc;
-    }
-
-    .status {
-      font-weight: bold;
-      font-size: 1.1em;
+    .img2:hover {
+      filter: grayscale(100%);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Marksheet Generator</h2>
-
-    <label>Student Name</label>
-    <input type="text" id="name" placeholder="Enter student name">
-
-    <label>Father's Name</label>
-    <input type="text" id="father" placeholder="Enter father's name">
-
-    <label>Mother's Name</label>
-    <input type="text" id="mother" placeholder="Enter mother's name">
-
-    <label>College Name</label>
-    <input type="text" id="college" placeholder="Enter college name">
-
-    <label>Roll Number</label>
-    <input type="text" id="roll" placeholder="Enter roll number">
-
-    <label>Upload Student Image</label>
-    <input type="file" id="image" accept="image/*">
-
-    <label>Subject 1 Marks</label>
-    <input type="number" id="sub1" min="0" max="100">
-
-    <label>Subject 2 Marks</label>
-    <input type="number" id="sub2" min="0" max="100">
-
-    <label>Subject 3 Marks</label>
-    <input type="number" id="sub3" min="0" max="100">
-
-    <label>Subject 4 Marks</label>
-    <input type="number" id="sub4" min="0" max="100">
-
-    <label>Subject 5 Marks</label>
-    <input type="number" id="sub5" min="0" max="100">
-
-    <button onclick="generateMarksheet()">Generate Marksheet</button>
-
-    <div class="marksheet" id="marksheet">
-      <h3>Marksheet</h3>
-      <div class="student-photo">
-        <img id="studentImage" src="" alt="Student Photo">
-      </div>
-      <div class="info">
-        <div><strong>Name:</strong> <span id="r_name"></span></div>
-        <div><strong>Roll No:</strong> <span id="r_roll"></span></div>
-        <div><strong>Father's Name:</strong> <span id="r_father"></span></div>
-        <div><strong>Mother's Name:</strong> <span id="r_mother"></span></div>
-        <div><strong>College:</strong> <span id="r_college"></span></div>
-      </div>
-      <div class="marks">
-        <div><strong>Subject 1:</strong> <span id="r_sub1"></span></div>
-        <div><strong>Subject 2:</strong> <span id="r_sub2"></span></div>
-        <div><strong>Subject 3:</strong> <span id="r_sub3"></span></div>
-        <div><strong>Subject 4:</strong> <span id="r_sub4"></span></div>
-        <div><strong>Subject 5:</strong> <span id="r_sub5"></span></div>
-      </div>
-      <div class="info">
-        <div><strong>Total Marks:</strong> <span id="r_total"></span> / 500</div>
-        <div><strong>Percentage:</strong> <span id="r_percent"></span>%</div>
-        <div class="status"><strong>Status:</strong> <span id="r_status"></span></div>
-      </div>
-    </div>
+<H1>Image Hover Color</H1>
+  <div class="image-container">
+    <img class="img1" src="https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg" alt="Hover Image">
+    <img class="img2" src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?semt=ais_hybrid&w=740" alt="Hover Image">
   </div>
-
-  <script>
-    function generateMarksheet() {
-      // Input values
-      const name = document.getElementById("name").value;
-      const roll = document.getElementById("roll").value;
-      const father = document.getElementById("father").value;
-      const mother = document.getElementById("mother").value;
-      const college = document.getElementById("college").value;
-
-      const marks = [
-        parseInt(document.getElementById("sub1").value) || 0,
-        parseInt(document.getElementById("sub2").value) || 0,
-        parseInt(document.getElementById("sub3").value) || 0,
-        parseInt(document.getElementById("sub4").value) || 0,
-        parseInt(document.getElementById("sub5").value) || 0
-      ];
-
-      const total = marks.reduce((a, b) => a + b, 0);
-      const percentage = ((total / 500) * 100).toFixed(2);
-      const status = percentage >= 40 ? 'Pass ✅' : 'Fail ❌';
-
-      // Display values
-      document.getElementById("r_name").textContent = name;
-      document.getElementById("r_roll").textContent = roll;
-      document.getElementById("r_father").textContent = father;
-      document.getElementById("r_mother").textContent = mother;
-      document.getElementById("r_college").textContent = college;
-
-      document.getElementById("r_sub1").textContent = marks[0];
-      document.getElementById("r_sub2").textContent = marks[1];
-      document.getElementById("r_sub3").textContent = marks[2];
-      document.getElementById("r_sub4").textContent = marks[3];
-      document.getElementById("r_sub5").textContent = marks[4];
-
-      document.getElementById("r_total").textContent = total;
-      document.getElementById("r_percent").textContent = percentage;
-      document.getElementById("r_status").textContent = status;
-
-      // Show student image
-      const imageFile = document.getElementById("image").files[0];
-      if (imageFile) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          document.getElementById("studentImage").src = e.target.result;
-        };
-        reader.readAsDataURL(imageFile);
-      } else {
-        document.getElementById("studentImage").src = "";
-      }
-
-      // Show marksheet
-      document.getElementById("marksheet").style.display = "block";
-    }
-  </script>
 </body>
 </html>
